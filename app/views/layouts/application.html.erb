@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YEARTOPIC</title>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag "application",
+							media: "all",
+							"data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "application",
+							"data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+
+<body>
+	<header>
+		<div id="header-wrap">
+			<% if user_signed_in? %>
+				<h1><%= link_to "YEARTOPIC", users_path %> </h1>
+				<%= render 'layouts/user_navbar' %>
+			<% else %>
+				<h1><%= link_to "YEARTOPIC", root_path %> </h1>
+				<%= render 'layouts/visitor_navbar' %>
+			<% end %>
+		</div>
+	</header>
+	
+	<div id="content">
+	<% if notice.present? %>
+		<p id="notice"><%= notice %> </p>
+	<% end %>
+	<% if alert.present? %>
+		<p id="alert"><%= alert %> </p>
+	<% end %>
+	
+	<%= yield %>
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<article class="user">
+	<table>
+		<tr>
+			<td>
+				<%= link_to(image_tag(user.image, :class => 'list_image')) %>
+			</td>
+			<td style="vertical-align: center">
+					<h2>&nbsp;<%= link_to highlight(user.nome, @search_query), user.route %> </h2>
+					<!-- <p><%= user.descricao %> </p> -->
+			</td>
+		</tr>
+	</table>
+</article>

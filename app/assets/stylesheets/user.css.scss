@@ -1,0 +1,46 @@
+@import "shadow";
+
+.user {
+	position: relative;
+	background-color: white;
+	padding: 15px 15px;
+	margin-top: 10px;
+	@include shadow(#ccc, 0, 3px, 6px);
+}
+
+.user h2 {
+	a { font-size: 1.3em; vertical-align: top;}
+}
+
+#content .search {
+	float: right;
+	margin: 0;
+	position: relative;
+	&:after {
+		padding: 5px;
+		font-size: 14px;
+		font-family: 'FontAwesome';
+		position: absolute;
+		content: "\f002";
+		color: #bbb;
+		top: 0;
+		right: 0;
+	}
+}
+
+.highlight {
+	font-size: inherit;
+	font-weight: inherit;
+	background-color: gold;
+}
+
+.user-registro {
+	p, img {
+		margin-right: 10px;
+	}
+}
+
+.user-registro + ul {
+	padding-top: 10px;
+	clear: both;
+}

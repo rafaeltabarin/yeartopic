@@ -1,0 +1,32 @@
+<br/>
+<h1><%= t '.title' %> </h1>
+
+<div style="float: right">
+	<%= link_to t('links.back'), root_path %>
+</div>
+
+<% if @user_session.errors.has_key? :base %>
+<div id="error_explanation">
+	<%= @user_session.errors[:base].join(', ') %>
+</div>
+<% end %>
+
+<%= form_for @user_session do |f| %>
+	<br/>
+	<p>
+		<%= f.label :login %>
+		<%= f.text_field :login %>
+	</p>
+	<br/>
+	<p>
+		<%= f.label :senha %>
+		<%= f.password_field :senha %>
+	</p>
+	<br/>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+<br>
+<p><%= link_to t('.sign_up'), new_user_path %> </p>
+

@@ -1,0 +1,24 @@
+<br/>
+
+<h1><%= t '.title', nome: @user.nome %> </h1>
+<% if current_user?(@user) %>
+<div style="float: right">
+	<% if current_user?(@user) %>
+		<%= link_to t('.edit'), edit_user_path(@user) %>
+		<%= link_to t('.destroy'), user_sessions_path, method: :delete, data:
+					{confirm: t('dialogs.destroy')}%>
+	<% end %>
+</div>
+<% end %>
+<br/>
+<div id="imagem">
+	<%= image_tag(@user.image, :class => 'list_image') %>&nbsp;
+</div>
+<ul>
+	<li><%= t '.login', login: @user.login %> </li>
+	<li><%= t '.cidade', cidade: @user.cidade %> </li>
+	<li><%= t '.estado', estado: @user.estado %> </li>
+	<li><%= t '.email', email: @user.email %> </li>
+	<li><%= t '.descricao', descricao: @user.descricao %> </li>
+</ul>
+<br/>

@@ -1,0 +1,98 @@
+<% if @user.errors.any? %>
+	<div id="error_explanation">
+		<h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
+		<ul>
+			<% @user.errors.full_messages.each do |message|%>
+				<li><%= message %> </li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+	<br/>	
+	<p>
+		<%= f.label :login %> 
+		<%= f.text_field :login %>
+		<% if @user.errors.has_key? :login %>
+			<div class="error_message">
+				<%= @user.errors[:login].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :senha %> 
+		<%= f.password_field :senha %>
+		<% if @user.errors.has_key? :senha %>
+			<div class="error_message">
+				<%= @user.errors[:senha].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :senha_confirmation %> 
+		<%= f.password_field :senha_confirmation %>
+		<% if @user.errors.has_key? :senha_confirmation %>
+			<div class="error_message">
+				<%= @user.errors[:senha_confirmation].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :nome %> 
+		<%= f.text_field :nome %>
+		<% if @user.errors.has_key? :nome %>
+			<div class="error_message">
+				<%= @user.errors[:nome].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :cidade %> 
+		<%= f.text_field :cidade %>
+		<% if @user.errors.has_key? :cidade %>
+			<div class="error_message">
+				<%= @user.errors[:cidade].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :estado %> 
+		<%= f.text_field :estado %>
+		<% if @user.errors.has_key? :estado %>
+			<div class="error_message">
+				<%= @user.errors[:estado].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :email %> 
+		<%= f.text_field :email %>
+		<% if @user.errors.has_key? :email %>
+			<div class="error_message">
+				<%= @user.errors[:email].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :descricao %> 
+		<%= f.text_area :descricao %>
+		<% if @user.errors.has_key? :descricao %>
+			<div class="error_message">
+				<%= @user.errors[:descricao].first %>
+			</div>
+		<% end %>
+	</p><br/>
+	<p>
+		<%= f.label :image %>
+		<%= f.text_field :image %>
+		<div class="error_message">
+			<%= @user.errors[:image].first %>
+		</div>
+	</p><br/>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+<br/>
+

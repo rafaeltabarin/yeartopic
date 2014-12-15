@@ -1,0 +1,93 @@
+pt-BR:
+    users:
+        new:
+            title: Cadastro
+        edit:
+            title: Editar Perfil
+        show:
+            title: "Perfil: %{nome}"
+            edit: 'Editar perfil'
+            descricao: "Descrição: %{descricao}"
+            email: "Email: %{email}"
+            cidade: "Cidade: %{cidade}"
+            estado: "Estado: %{estado}"
+            login: "Login: %{login}"
+            destroy: "Remover conta"
+        index:
+            title: 'Lista de Usuários'
+            search_results: 'Resultados da busca'
+            edit: 'Editar perfil'
+            destroy: "Remover conta"
+        search:
+            search_for: 'Buscar por...'
+
+    user_sessions:
+        new:
+            title: 'Entrar'
+            sign_up: 'Cadastre-se'
+
+    signup:
+        confirm_login:
+
+    links:
+        back: Voltar
+
+    layout:
+        pessoas: Pessoas
+        cadastro: Cadastrar
+        apagar: Apagar
+        signup: Cadastro
+        signin: Login
+        my_profile: Meu perfil
+        signout: Logout
+
+    activerecord:
+        models:
+            user: Usuário
+        attributes:
+            user:
+                descricao: Descriçao
+                email: Email
+                nome: Nome completo
+                cidade: Cidade
+                estado: Estado
+                login: Login
+                senha: Senha
+                senha_confirmation: Confirme sua senha
+                image: Link da Imagem
+
+    activemodel:
+        attributes:
+            user_session:
+                login: Login
+                senha: Senha
+        errors:
+            messages:
+                invalid_login: 'Usuário ou senha inválidos'
+
+    helpers:
+        submit:
+            user_session:
+                create: 'Entrar'
+
+    flash:
+        notice:
+            signed_in: 'Login efetuado com sucesso!'
+            destroy_user: 'Sua conta em YEARTOPIC foi removida.'
+            signed_out: 'Logout efetuado com sucesso. Até logo!'
+            pessoa_created: 'Pessoa criada com sucesso!'
+            pessoa_updated: 'Pessoa atualizada com sucesso!'
+            already_logged_in: "Você já está logado."
+        alert:
+            needs_login: "Você precisa estar logado para continuar"
+
+    dialogs:
+        destroy: 'Você tem certeza que deseja remover sua conta do YEARTOPIC?'
+
+    views:
+        pagination:
+            first: "&laquo; Primeira"
+            last: "Última &raquo;"
+            previous: "&lsaquo; Anterior"
+            next: "Próxima &rsaquo;"
+            truncate: "..."

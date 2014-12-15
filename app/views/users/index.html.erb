@@ -1,0 +1,41 @@
+<br/>
+<% @user = current_user %>
+<h1><%= @user.nome %> </h1>
+<div style="float: right">
+	<% if current_user?(@user) %>
+		<%= link_to t('.edit'), edit_user_path(@user) %>
+		<%= link_to t('.destroy'), user_sessions_path, method: :delete, data:
+					{confirm: t('dialogs.destroy')}%>
+	<% end %>
+</div>
+<br/>
+<div id="imagem">
+	<%= image_tag(@user.image, :class => 'list_image') %>&nbsp;
+</div>
+<ul>
+	<li>Login: <%= @user.login %> </li>
+	<li>Cidade: <%= @user.cidade %> </li>
+	<li>Estado: <%= @user.estado %> </li>
+	<li>Email: <%= @user.email %> </li>
+	<li>Descrição: <%= @user.descricao %> </li>
+</ul>
+<br/>
+<br/>
+
+
+<%= render 'search' %>
+
+<h1>
+  <% if @search_query.present? %>
+    <%= t '.search_results' %>
+  <% else %>
+    <%= t '.title' %>
+  <% end %>
+</h1>
+
+<br>
+
+  <%= render @users %>
+
+  <%= paginate @users %>
+<br>

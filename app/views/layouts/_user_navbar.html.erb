@@ -1,0 +1,13 @@
+<nav>
+	<ul>
+		<li><%= link_to t('layout.pessoas'), users_path %> </li>
+		<li>
+			<%= link_to t('layout.my_profile'),
+						user_path(current_user) %>
+		</li>
+		<li>
+			<%= link_to t('layout.signout'), user_sessions_path,
+						method: :delete %>
+		</li>
+	</ul>
+</nav>

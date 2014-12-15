@@ -1,0 +1,32 @@
+<br/>
+<div id="imagem" style="width: 300px">
+<br/>
+<h1>Apresentaçao do Sistema</h1>
+<br/>
+	YEARTOPIC é um sistema gratuito voltado para os Alunos de Tópicos Especias em Computação
+	do Curso de Ciência da Computação da Universidade Federal de Alfenas, onde cada aluno
+	pode cadastrar seus dados e inserir um link de uma foto que desejar! É um YearBook simplificado
+	e de fácil utilização. 
+	<br/><br/>
+	YEARTOPIC permite que qualquer pessoa cadastrada veja o perfil de outros usuários, inclusive
+	sua foto. 
+	<br/><br/>
+	Ao lado, pode-se ver alguns dos usuários que já estão cadastrados. Entre e compartilhe sua foto!
+</div>
+<ul style="float: right">
+	<% @users.each do |user| %>
+		<article class="user">
+			<table>
+				<tr>
+					<td>
+						<%= link_to image_tag(user.image, :class => 'list_image'), user %>
+					</td>
+					<td style="vertical-align: center">
+							<h2>&nbsp;<%= link_to user.nome, user %> </h2>
+							<!-- <p><%= user.descricao %> </p> -->
+					</td>
+				</tr>
+			</table>
+		</article>
+	<% end %>
+</ul>
