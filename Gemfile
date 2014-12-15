@@ -9,7 +9,7 @@ group :development do
 gem 'sqlite3', '1.3.8'
 end
 group :production do
-#gem 'pg', '0.17.1'
+gem 'pg', '0.17.1'
 gem 'rails_12factor', '0.0.2'
 end
 # Use SCSS for stylesheets
@@ -53,4 +53,3 @@ gem 'kaminari'
 
 # gem "paperclip", github: 'thoughtbot/paperclip'
 
-gem 'pg', '0.17.1'
