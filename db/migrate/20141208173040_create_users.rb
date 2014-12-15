@@ -7,12 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :cidade
       t.string :estado
       t.string :email
-      t.string :image
       t.text :descricao
-      t.string :slug
 
       t.index :email, unique: true
-      t.index :slug
 
       t.timestamps
     end
