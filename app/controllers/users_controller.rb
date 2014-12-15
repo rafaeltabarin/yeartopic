@@ -48,11 +48,11 @@ class UsersController < ApplicationController
 	end
 
 	def delete
-		@user = User.find(user_session.id)
+		@user = User.find(user.id)
 	end
 
 	def destroy
-		@user = User.find(user_session.id)
+		@user = User.find(user.id)
 		@user.destroy
 		user_session.destroy
 		redirect_to root_path, notice: t('flash.notice.destroy_user')

@@ -4,7 +4,7 @@
 <div style="float: right">
 	<% if current_user?(@user) %>
 		<%= link_to t('.edit'), edit_user_path(@user) %>
-		<%= link_to t('.destroy'), user_sessions_path, method: :delete, data:
+		<%= link_to t('.destroy'), user_path(@user), method: :delete, data:
 					{confirm: t('dialogs.destroy')}%>
 	<% end %>
 </div>

@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
 	before_action :require_no_authentication, only: [:new, :create]
-	before_action :require_authentication, only: [:edit, :update]
+	before_action :require_authentication, only: [:edit, :update, :destroy]
 
 	def new
 		@user_session = UserSession.new(session)
