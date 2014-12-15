@@ -4,9 +4,6 @@ class User < ActiveRecord::Base
 	EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
 
 	validates_presence_of :nome
-	validates_presence_of :slug
-
-	friendly_id :nome, use: [:slugged, :history]
 
 	validates_presence_of :login, :senha, :nome, :cidade, :estado, :email, :descricao
 	validates_confirmation_of :senha
