@@ -48,16 +48,16 @@ ActiveRecord::Schema.define(version: 20141214200548) do
     t.text     "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
     t.string   "image_file_name"
     t.string   "image_file_name_file_name"
     t.string   "image_file_name_content_type"
     t.integer  "image_file_name_file_size"
     t.datetime "image_file_name_updated_at"
     t.string   "image"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug"
 
 end
